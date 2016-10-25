@@ -1,0 +1,46 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 指定数据库方言，更好的操作目标数据库，因为数据库都有一些区别通过方言就可以对应使用目标数据库的特点
+             org.hibernate.dialect.MySQLInnoDBDialect   MySQL数据库5.5之前使用
+             org.hibernate.dialect.MySQL5InnoDBDialect  MySQL数据库5.5之后使用
+
+         -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<!-- 数据库驱动 -->
+		<property name="hibernate.connection.driver.class">com.mysql.jdbc.Driver</property>
+		<!-- 数据库url
+            jdbc:mysql://192.168.10.222:3306/test 指定连接的网络数据库
+            jdbc：mysql://localhost:3306/test 表示连接的是本机数据库
+         -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/MSBM</property>
+		<!-- 数据库登录用户名的密码 -->
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">123456</property>
+
+		<!-- 数据库自动创建表操作
+            create-drop 在程序启动的时候创建数据库表，程序退出的时候删除之前创建的表（设计阶段）
+            create        在程序启动的时候删除上一次创建的数据库表，然后再创建新的表结构（设计阶段）
+            update      在程序启动的时候如果没有表就创建数据库表，有就检查有没有更新（推荐使用）
+            validate    在程序启动的时候检查表结构，不会创建
+         -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- 显示执行的SQL语句 -->
+		<property name="show_sql">true</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<!-- 格式这行的SQL语句 -->
+		<property name="hibernate.format_sql">true</property>
+
+		<!-- 引入需要持久化的持久化配置文件 -->
+		<mapping resource="personal/msbm/inksmallfrog/model/Book.hbm.xml"/>
+		<mapping class="personal.msbm.inksmallfrog.model.Book"/>
+		<mapping resource="personal/msbm/inksmallfrog/model/User.hbm.xml"/>
+		<mapping class="personal.msbm.inksmallfrog.model.User"/>
+		<mapping resource="personal/msbm/inksmallfrog/model/Order.hbm.xml"/>
+		<mapping class="personal.msbm.inksmallfrog.model.Order"/>
+	</session-factory>
+
+</hibernate-configuration>
