@@ -1,3 +1,19 @@
-/WebService/.idea
-/WebService/out
-/WebService/WebService.iml
+/MSBM/.idea
+/MSBM/out
+/MSBM/WebService.iml
+
+# Ignore bundler config.
+/MoMoBookStore/.bundle
+
+# Ignore the default SQLite database.
+/MoMoBookStore/db/*.sqlite3
+/MoMoBookStore/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/MoMoBookStore/log/*
+/MoMoBookStore/tmp/*
+!/MoMoBookStore/log/.keep
+!/MoMoBookStore/tmp/.keep
+
+# Ignore Byebug command history file.
+/MoMoBookStore/.byebug_history
