@@ -1,10 +1,16 @@
 package personal.msbm.inksmallfrog.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Created by inksmallfrog on 2016/10/25.
  */
+@XmlRootElement(name="Book")
+@XmlType(propOrder={})
 public class Book implements PersistentObject{
     private Integer id = -1;
     private String name;
@@ -17,8 +23,8 @@ public class Book implements PersistentObject{
     private Integer count;
     private Integer ordered_times;
     private String descript;
-    private Timestamp create_time;
-    private Timestamp finished_time;
+    private Date create_time;
+    private Date finished_time;
 
     public Book(){}
 
@@ -43,54 +49,55 @@ public class Book implements PersistentObject{
         finished_time = _finished_time;
     }
 
-    public Timestamp getCreate_time() {
+    @XmlElement(type = Date.class)
+    public Date getCreate_time() {
         return create_time;
     }
-
-    public Timestamp getFinished_time() {
+    @XmlElement(type = Date.class)
+    public Date getFinished_time() {
         return finished_time;
     }
-
+    @XmlElement(type = String.class)
     public String getName() {
         return name;
     }
-
+    @XmlElement(type = int.class)
     public Integer getId() {
         return id;
     }
-
+    @XmlElement(type = double.class)
     public Double getDiscount() {
         return discount;
     }
-
+    @XmlElement(type = double.class)
     public Double getOriginal_price() {
         return original_price;
     }
-
+    @XmlElement(type = double.class)
     public Double getPrice() {
         return price;
     }
-
+    @XmlElement(type = int.class)
     public Integer getCount() {
         return count;
     }
-
+    @XmlElement(type = int.class)
     public Integer getOrdered_times() {
         return ordered_times;
     }
-
+    @XmlElement(type = String.class)
     public String getDescript() {
         return descript;
     }
-
+    @XmlElement(type = String.class)
     public String getISBN() {
         return ISBN;
     }
-
+    @XmlElement(type = String.class)
     public String getPicture() {
         return picture;
     }
-
+    @XmlElement(type = String.class)
     public String getPublisher() {
         return publisher;
     }
@@ -139,11 +146,14 @@ public class Book implements PersistentObject{
         this.publisher = publisher;
     }
 
-    public void setCreate_time(Timestamp create_time) {
+    public void setCreate_time(Date create_time) {
         this.create_time = create_time;
+        System.out.println(create_time.toString());
     }
 
-    public void setFinished_time(Timestamp finished_time) {
+    public void setFinished_time(Date finished_time) {
         this.finished_time = finished_time;
     }
 }
+
+

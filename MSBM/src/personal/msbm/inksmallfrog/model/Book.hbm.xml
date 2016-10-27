@@ -22,8 +22,8 @@
         <property name="count" type="java.lang.Integer" not-null="true"/>
         <property name="ordered_times" type="java.lang.Integer" not-null="true"/>
         <property name="descript" type="java.lang.String"/>
-        <property name="create_time" type="java.sql.Timestamp"/>
-        <property name="finished_time" type="java.sql.Timestamp"/>
+        <property name="create_time" type="timestamp"/>
+        <property name="finished_time" type="timestamp"/>
     </class>
 
 
