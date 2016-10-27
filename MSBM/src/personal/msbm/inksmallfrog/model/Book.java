@@ -1,5 +1,7 @@
 package personal.msbm.inksmallfrog.model;
 
+import personal.msbm.inksmallfrog.config.Config;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -95,7 +97,7 @@ public class Book implements PersistentObject{
     }
     @XmlElement(type = String.class)
     public String getPicture() {
-        return picture;
+        return Config.HOST + picture;
     }
     @XmlElement(type = String.class)
     public String getPublisher() {

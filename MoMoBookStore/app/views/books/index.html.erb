@@ -1,0 +1,17 @@
+<h1>MSBM Books List</h1>
+
+<% @books.each do |book| %>
+	<ul><%= book.name %>
+		<img src='<%= book.picture %>'>
+		<li>isbn=<%= book.isbn %></li>
+		<li>publisher=<%= book.publisher %></li> 
+		<li>original_price=<%= book.original_price %></li>
+		<li>price=<%= book.price %></li> 
+		<li>discount=<%= book.discount %></li> 
+		<li>count=<%= book.count %></li>
+		<li>ordered_times=<%= book.ordered_times %></li>
+		<li>descript=<%= book.descript %></li>
+		<li>create_time=<%= book.create_time %></li> 
+		<li>finished_time=<%= book.finished_time %></li> 
+	</ul>
+<% end %>

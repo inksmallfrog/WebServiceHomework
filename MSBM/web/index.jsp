@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <img src="assets/book_picture/default.jpg">
   </body>
 </html>
